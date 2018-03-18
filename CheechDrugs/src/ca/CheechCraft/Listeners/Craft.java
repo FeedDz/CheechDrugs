@@ -18,8 +18,7 @@ public class Craft implements Listener {
 	public void onCraft(CraftItemEvent event) {
 		Player p = (Player) event.getWhoClicked();
 
-		ItemStack item = new ItemStack(Material.BREAD);
-		ItemMeta im = item.getItemMeta();
+		ItemStack item = new ItemStack(Material.AIR);
 
 		// ------------------------------
 		// ------------------------------
@@ -37,6 +36,7 @@ public class Craft implements Listener {
 
 			// Set Meta of item
 			item.setType(Material.BREAD);
+			ItemMeta im = item.getItemMeta();
 			String wheat = ChatColor.GREEN + "" + ChatColor.BOLD + "Khalifa Kush Edibles";
 			im.setDisplayName(wheat);
 			item.setItemMeta(im);
@@ -70,6 +70,7 @@ public class Craft implements Listener {
 
 			// Set Meta of item
 			item.setType(Material.PUMPKIN_SEEDS);
+			ItemMeta im = item.getItemMeta();
 			String pumpkinseeds = (ChatColor.WHITE + "" + ChatColor.BOLD + "White Rhino");
 			im.setDisplayName(pumpkinseeds);
 			item.setItemMeta(im);
@@ -101,6 +102,7 @@ public class Craft implements Listener {
 
 			// Set Meta of item
 			item.setType(Material.SUGAR);
+			ItemMeta im = item.getItemMeta();
 			String sugar = ChatColor.WHITE + "" + ChatColor.BOLD + "White Widow";
 			im.setDisplayName(sugar);
 			item.setItemMeta(im);
@@ -131,6 +133,7 @@ public class Craft implements Listener {
 
 			// Set Meta of item
 			item.setType(Material.PAPER);
+			ItemMeta im = item.getItemMeta();
 			String paper = ChatColor.BLUE + "" + ChatColor.BOLD + "LSD";
 			im.setDisplayName(paper);
 			item.setItemMeta(im);
@@ -160,6 +163,7 @@ public class Craft implements Listener {
 
 			// Set Meta of item
 			item.setType(Material.MELON_SEEDS);
+			ItemMeta im = item.getItemMeta();
 			String melonseeds = (ChatColor.GREEN + "" + ChatColor.BOLD + "Green Crack");
 			im.setDisplayName(melonseeds);
 			item.setItemMeta(im);
