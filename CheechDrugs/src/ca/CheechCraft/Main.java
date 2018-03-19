@@ -5,8 +5,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ca.CheechCraft.Listeners.Craft;
 import ca.CheechCraft.Listeners.Effects;
 import ca.CheechCraft.Listeners.Pickup;
+import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin {
+	
+	public static String prefix = (ChatColor.GREEN + "" +  ChatColor.BOLD + "[CheechSmoke]");
 
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(new Pickup(), this);
