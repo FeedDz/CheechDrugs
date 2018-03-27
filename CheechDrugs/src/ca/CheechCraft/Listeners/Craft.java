@@ -12,6 +12,8 @@ import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import ca.CheechCraft.Main;
+
 public class Craft implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
@@ -50,7 +52,7 @@ public class Craft implements Listener {
 			event.setCancelled(true);
 
 			// Send the player the message
-			p.sendMessage("You Crafted " + give + ChatColor.GREEN + " " + wheat);
+			p.sendMessage(Main.prefix +  ChatColor.WHITE + " You Crafted " + give + ChatColor.GREEN + " " + wheat);
 
 		}
 
@@ -84,7 +86,7 @@ public class Craft implements Listener {
 			event.setCancelled(true);
 
 			// Send the player the message
-			p.sendMessage("You Crafted " + give + ChatColor.WHITE + ChatColor.BOLD + " " + pumpkinseeds);
+			p.sendMessage(Main.prefix +  ChatColor.WHITE + " You Crafted " + give + ChatColor.WHITE + ChatColor.BOLD + " " + pumpkinseeds);
 
 		}
 
@@ -116,7 +118,7 @@ public class Craft implements Listener {
 			event.setCancelled(true);
 
 			// Send the player the message
-			p.sendMessage("You Crafted " + craftedSugar + ChatColor.WHITE + ChatColor.BOLD + " " + sugar);
+			p.sendMessage(Main.prefix +  ChatColor.WHITE +" You Crafted " + craftedSugar + ChatColor.WHITE + ChatColor.BOLD + " " + sugar);
 
 		}
 		// ------------------------------
@@ -147,7 +149,7 @@ public class Craft implements Listener {
 			event.setCancelled(true);
 
 			// Send the player the message
-			p.sendMessage("You Crafted " + craftedPaper + ChatColor.WHITE + ChatColor.BOLD + " " + paper);
+			p.sendMessage(Main.prefix +  ChatColor.WHITE + "You Crafted " + craftedPaper + ChatColor.WHITE + ChatColor.BOLD + " " + paper);
 		}
 		// ------------------------------
 		// ------------------------------
@@ -177,7 +179,42 @@ public class Craft implements Listener {
 			event.setCancelled(true);
 
 			// Send the player the message
-			p.sendMessage("You Crafted " + craftedMelon + ChatColor.WHITE + ChatColor.BOLD + " " + melonseeds);
+			p.sendMessage(Main.prefix + ChatColor.WHITE + " You Crafted " + craftedMelon + ChatColor.WHITE + ChatColor.BOLD + " " + melonseeds);
+
+		}
+
+		// ------------------------------
+		// ------------------------------
+		// ------------------------------
+		// Check if item crafted is HaYBALE
+		// ------------------------------
+		// ------------------------------
+		if (event.getRecipe().getResult().getType() == Material.WHEAT) {
+
+			// Do Math to get the amount to be added
+			int craftedWheat = Arrays.stream(event.getInventory().getContents())
+					.filter(stack -> stack.getType() == Material.HAY_BLOCK).mapToInt(stack -> stack.getAmount()).sum();
+
+			int craftAmount = 9;
+			int give = (craftAmount * craftedWheat);
+			
+			// Set Meta of item
+			item.setType(Material.WHEAT);
+			ItemMeta im = item.getItemMeta();
+			String heyblock = (ChatColor.GREEN + "" + ChatColor.BOLD + "OG Kush");
+			im.setDisplayName(heyblock);
+			item.setItemMeta(im);
+			item.setAmount(give);
+
+			// Add the item to players inventory manually
+			p.getInventory().addItem(item);
+
+			// Cancel all events and clear crafting table fix bug that deletes extra items!
+			event.getInventory().clear();
+			event.setCancelled(true);
+
+			// Send the player the message
+			p.sendMessage(Main.prefix + ChatColor.WHITE + " You Crafted " + give + ChatColor.WHITE + ChatColor.BOLD + " " + heyblock);
 
 		}
 
