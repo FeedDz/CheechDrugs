@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import ca.CheechCraft.Listeners.Craft;
 import ca.CheechCraft.Listeners.Effects;
+import ca.CheechCraft.Listeners.InvOpen;
 import ca.CheechCraft.Listeners.Pickup;
 import net.md_5.bungee.api.ChatColor;
 
@@ -15,6 +16,7 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new Pickup(), this);
 		getServer().getPluginManager().registerEvents(new Craft(), this);
 		getServer().getPluginManager().registerEvents(new Effects(), this);
+		getServer().getPluginManager().registerEvents(new InvOpen(), this);
 
 		getLogger().info("------------------------");
 		getLogger().info("------------------------");
