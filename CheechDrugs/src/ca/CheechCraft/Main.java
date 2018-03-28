@@ -2,6 +2,7 @@ package ca.CheechCraft;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import ca.CheechCraft.Listeners.Click;
 import ca.CheechCraft.Listeners.Craft;
 import ca.CheechCraft.Listeners.Effects;
 import ca.CheechCraft.Listeners.InvOpen;
@@ -17,6 +18,7 @@ public class Main extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new Craft(), this);
 		getServer().getPluginManager().registerEvents(new Effects(), this);
 		getServer().getPluginManager().registerEvents(new InvOpen(), this);
+		getServer().getPluginManager().registerEvents(new Click(), this);
 
 		getLogger().info("------------------------");
 		getLogger().info("------------------------");
