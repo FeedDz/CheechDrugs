@@ -24,7 +24,7 @@ public class Main extends JavaPlugin {
 		getLogger().info("------------------------");
 		getLogger().info("------------------------");
 		getLogger().info("CheechDrugs has loaded!");
-		getLogger().info("------Version 1.0-------");
+		getLogger().info("------Version 1.12-------");
 		getLogger().info("------------------------");
 		getLogger().info("------------------------");
 
@@ -35,7 +35,7 @@ public class Main extends JavaPlugin {
 		getLogger().info("--------------------------");
 		getLogger().info("--------------------------");
 		getLogger().info("CheechDrugs has Disabled!");
-		getLogger().info("-------Version 1.0--------");
+		getLogger().info("-------Version 1.12--------");
 		getLogger().info("--------------------------");
 		getLogger().info("--------------------------");
 

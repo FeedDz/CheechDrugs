@@ -47,7 +47,7 @@ public class Craft implements Listener {
 			// Add the item to players inventory manually
 			p.getInventory().addItem(item);
 
-			// Cancel all events and clear crafting table fix bug that deletes extra items!
+			// Cancel all events and clear crafting table TODO fix bug that deletes extra items!
 			event.getInventory().clear();
 			event.setCancelled(true);
 

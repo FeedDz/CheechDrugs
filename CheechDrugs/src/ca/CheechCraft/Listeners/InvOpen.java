@@ -14,7 +14,7 @@ public class InvOpen implements Listener {
 	
 	@SuppressWarnings("deprecation")
 	@EventHandler(priority = EventPriority.HIGHEST)
-	public void click(InventoryOpenEvent e) {
+	public void open(InventoryOpenEvent e) {
         
 		Player player = (Player) e.getPlayer();
 
